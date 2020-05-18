@@ -11,6 +11,7 @@
 <style lang="scss">
   .nav {
     position: fixed;
+    z-index: 1;
     top: 0;
     display: flex;
     align-items: center;

@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome!"/>
+    <Carousel />
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
+import Carousel from '@/components/Home/Carousel/Carousel.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    Carousel,
   },
 };
 </script>
