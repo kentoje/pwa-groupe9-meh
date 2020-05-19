@@ -1,28 +1,27 @@
 <template>
-  <div class="article" v-if="post">
+  <div class="article" v-if="dataFetched">
     <h1 class="article__type">Article</h1>
     <!-- {{ $route.params.slug }} -->
-    <h2 class="article__title">{{ post.title }}</h2>
+    <h2 class="article__title">{{ dataFetched.title }}</h2>
     <div class="article__author">
-      <img class="article__author--icon" :src="firstImage" alt="Image">
+      <img class="article__author--icon" :src="firstImage" alt="Image" />
       <div>
         <p class="article__author--name">Emilie Clarck</p>
         <p class="article__author--date">10 mai 2020 . 10 min de lecture</p>
       </div>
     </div>
-    <img class="article__image" :src="secondImage" alt="Image">
-    <p class="article__text">{{post.body}}</p>
+    <img class="article__image" :src="secondImage" alt="Image" />
+    <p class="article__text">{{dataFetched.body}}</p>
   </div>
 </template>
 
 <style scoped lang="scss">
-
 .article {
   $root: &;
 
   padding: 0px 20% 0px 20%;
 
-   &__type {
+  &__type {
     text-transform: uppercase;
     font-size: 12px;
     margin-bottom: 8px;
@@ -49,7 +48,8 @@
       margin: auto 0px auto 15px;
     }
 
-    &--name, &--date {
+    &--name,
+    &--date {
       font-size: 14px;
     }
 
@@ -59,7 +59,7 @@
     }
 
     &--date {
-      color: #949494
+      color: #949494;
     }
   }
 
@@ -80,12 +80,13 @@
       font-size: 10px;
     }
 
-    &__title  {
+    &__title {
       font-size: 30px;
       margin-bottom: 40px;
     }
 
-    &__author--name, &__author--date {
+    &__author--name,
+    &__author--date {
       font-size: 12px;
     }
 
@@ -98,29 +99,42 @@
     }
   }
 }
-
 </style>
 
 <script>
 import firstImage from '@/assets/images/image1.jpg';
 import secondImage from '@/assets/images/image2.jpg';
+import fetchUser from '@/library/methods/fetchUser';
 
 export default {
-  created() {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.slug}`)
-      .then((response) => {
-        response.json()
-          .then((data) => {
-            this.post = data;
-          });
-      });
-  },
   data() {
     return {
-      post: null,
       firstImage,
       secondImage,
+      dataFetched: null,
+      slug: null,
     };
+  },
+  beforeRouteEnter(to, from, next) {
+    fetchUser((err, name) => {
+      next((vm) => vm.setData(err, name));
+    }, to.params.slug);
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.slug = to.params.slug;
+    fetchUser((err, name) => {
+      this.setData(err, name);
+      next();
+    }, this.slug);
+  },
+  methods: {
+    setData(err, data) {
+      if (err) {
+        console.error(err);
+      } else {
+        this.dataFetched = data;
+      }
+    },
   },
 };
 </script>
