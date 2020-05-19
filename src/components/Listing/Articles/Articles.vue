@@ -14,6 +14,14 @@
 <style lang="scss">
   .articles {
     margin: 128px 180px 0 180px;
+
+    @media (max-width: 1024px) {
+      margin: 128px 10% 10px 10%;
+    }
+
+    @media (max-width: 768px) {
+      margin: 128px 0px 180px 0px;
+    }
   }
 </style>
 

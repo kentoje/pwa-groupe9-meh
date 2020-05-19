@@ -91,6 +91,41 @@
         }
       }
     }
+
+    @media (max-width: 768px) {
+      display: block;
+      width: calc(100vw - 50px);
+      margin: auto;
+      max-height: inherit;
+
+      &__media, &__details {
+        width: 100%;
+      }
+
+      &__media {
+        margin-bottom: 25px;
+        padding-top: 60%;
+      }
+
+      &__details {
+        margin-left: inherit;
+
+        #{$root}__type {
+          font-size: 12px;
+        }
+
+        #{$root}__title {
+          margin-top: 25px;
+          margin-bottom: 25px;
+          width: 85%;
+          font-size: 26px;
+        }
+
+        #{$root}__text {
+          margin-top: inherit;
+        }
+      }
+    }
   }
 </style>
 
