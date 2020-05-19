@@ -2,7 +2,7 @@
   <router-link :to="{ path: `/article/${id}`, query: { type: articleType, image: imageName } }"
                class="item">
     <div class="item__media">
-      <img class="item__image" :src="imageName" alt="Image">
+      <img class="item__image" v-lazy="imageName" alt="Image">
     </div>
     <div class="item__details">
       <h3 class="item__type">{{ articleType }}</h3>
@@ -21,9 +21,9 @@
 
     display: flex;
     align-items: center;
-    max-height: 296px;
     margin-top: 340px;
     text-decoration: none;
+    transition: transform .2s ease-in-out;
 
     &:first-child {
       margin-top: 0;
@@ -31,6 +31,10 @@
 
     &:last-child {
       margin-bottom: 136px;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
     }
 
     &__media {

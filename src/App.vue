@@ -1,17 +1,14 @@
 <template>
   <div id="app">
     <Header />
-    <router-view class="view" />
+    <transition name="fade" mode="out-in">
+      <router-view v-if="show" class="view" />
+    </transition>
     <Footer />
   </div>
 </template>
 
 <style lang="scss">
-  /* #app {
-    display: flex;
-    justify-content: center;
-  } */
-
   .view {
     margin-top: 164px;
   }
@@ -25,6 +22,11 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  data() {
+    return {
+      show: true,
+    };
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="firstView">
-      <img :src="home1" alt="photo cailloux" />
+      <img v-lazy="home1" alt="photo cailloux" />
       <div class="content">
         <p class="type">Article<p>
           <svg width="26" height="7" viewBox="0 0 26 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +22,7 @@
     </div>
     <div class="famousArticles">
       <div class="secondView">
-      <img :src="home2" alt="photo cailloux" />
+      <img v-lazy="home2" alt="photo cailloux" />
       <div class="content">
         <p class="type">Portrait<p>
           <svg width="26" height="7" viewBox="0 0 26 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="thirdView">
-      <img :src="home3" alt="photo cailloux" />
+      <img v-lazy="home3" alt="photo cailloux" />
       <div class="content">
         <p class="type">Article<p>
           <svg width="26" height="7" viewBox="0 0 26 7" fill="none" xmlns="http://www.w3.org/2000/svg">

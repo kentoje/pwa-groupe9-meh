@@ -2,8 +2,8 @@
   <footer>
     <hr>
     <div class="top">
-      <span><img class="flag" :src="flag" alt="drapeau Français"/>France</span>
-      <span>Retour en haut<img class="arrow" :src="arrow" alt="flèche haut"/></span>
+      <span><img class="flag" v-lazy="flag" alt="drapeau Français"/>France</span>
+      <span>Retour en haut<img class="arrow" v-lazy="arrow" alt="flèche haut"/></span>
     </div>
     <div class="content">
       <div>

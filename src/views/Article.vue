@@ -3,13 +3,13 @@
     <h2 class="article__type">{{ type }}</h2>
     <h1 class="article__title">{{ dataFetched.title }}</h1>
     <div class="article__author">
-      <img class="article__author--icon" :src="firstImage" alt="Image" />
+      <img class="article__author--icon" v-lazy="firstImage" alt="Image" />
       <div>
         <p class="article__author--name">Emilie Clarck</p>
         <p class="article__author--date">10 mai 2020 . 10 min de lecture</p>
       </div>
     </div>
-    <img class="article__image" :src="image" alt="Image" />
+    <img class="article__image" v-lazy="image" alt="Image" />
     <p class="article__text">{{ dataFetched.body }}</p>
   </div>
 </template>
@@ -37,6 +37,7 @@
   &__author {
     display: flex;
     margin-bottom: 40px;
+
     &--icon {
       border-radius: 50%;
       width: 55px;
