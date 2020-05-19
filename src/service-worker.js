@@ -18,3 +18,27 @@ workbox.routing.registerRoute(
     ],
   }),
 );
+
+self.addEventListener('push', (event) => {
+  let pushMessage = event.data.text();
+  const options = {
+    body: pushMessage,
+    icon: './img/icons/apple-touch-icon-60x60.png',
+    image: './img/icons/apple-touch-icon-60x60.png',
+    vibrate: [200, 100, 200, 100],
+    tag: 'vibration-sample',
+  };
+
+  event.waitUntil(self.registration.showNotification(pushMessage, options));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  const origin = event.currentTarget.location.origin;
+  const route = '/#/listing';
+  const url = origin + route
+
+  event.notification.close();
+
+  const promiseChain = clients.openWindow(url);
+  event.waitUntil(promiseChain);
+});

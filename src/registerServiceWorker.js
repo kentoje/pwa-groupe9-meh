@@ -9,6 +9,15 @@ if (process.env.NODE_ENV === 'production') {
         'App is being served from cache by a service worker.\n'
         + 'For more details, visit https://goo.gl/AFskqB',
       );
+
+      Notification.requestPermission()
+        .then((res) => {
+          if (res === 'granted') {
+            console.log('Notification acceptée');
+          } else {
+            console.log('Notification refusée');
+          }
+        });
     },
     registered() {
       console.log('Service worker has been registered.');
