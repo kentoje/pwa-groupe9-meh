@@ -92,6 +92,8 @@ footer {
   }
 
   @media (max-width: 768px) {
+    margin: 150px 25px 0px 25px;
+
     .top {
       width: 100%;
     }
