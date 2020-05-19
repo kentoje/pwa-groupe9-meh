@@ -85,6 +85,7 @@ footer {
   .author {
     font-size: 12px;
     color: #8D8D8D;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 1024px) {

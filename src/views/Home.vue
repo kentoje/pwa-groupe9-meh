@@ -187,9 +187,9 @@
 </style>
 
 <script>
-import home1 from '@/assets/images/home1.png';
-import home2 from '@/assets/images/home2.png';
-import home3 from '@/assets/images/home3.png';
+import home1 from '@/assets/images/home1.jpg';
+import home2 from '@/assets/images/home2.jpg';
+import home3 from '@/assets/images/home3.jpg';
 
 export default {
   name: 'Home',
