@@ -1,8 +1,7 @@
 <template>
   <div class="articles">
     <div v-for="post in posts" :key="post.id">
-      <Item v-if="post.id < 30"
-            :id="post.id"
+      <Item :id="post.id"
             :imageName="secondImage"
             :title="post.title"
             :body="post.body"
@@ -22,6 +21,13 @@ import Item from '@/components/Listing/Articles/Item/Item.vue';
 import firstImage from '@/assets/images/image1.jpg';
 import secondImage from '@/assets/images/image2.jpg';
 
+const limit = {
+  start: 0,
+  end: 10,
+};
+
+const { start, end } = limit;
+
 export default {
   components: {
     Item,
@@ -37,7 +43,7 @@ export default {
     fetch('https://jsonplaceholder.typicode.com/posts/').then((response) => {
       response.json()
         .then((data) => {
-          this.posts = data;
+          this.posts = data.slice(start, end);
         });
     });
   },

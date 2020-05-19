@@ -74,9 +74,14 @@
       }
 
       #{$root}__text {
+        display: -webkit-box;
         margin-top: 24px;
         font-size: 14px;
         line-height: 1.65;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
 
       #{$root}__link {
