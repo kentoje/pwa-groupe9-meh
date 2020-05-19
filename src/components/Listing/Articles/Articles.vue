@@ -1,12 +1,12 @@
 <template>
   <div class="articles">
     <!-- Do a for loop to go through all articles that we fetch -->
-    <Item :imageName="firstImage"
-          title="L’histoire de notre toute première abonnée."
+    <Item v-for="post in posts"
+          :key="post.id"
+          :imageName="firstImage"
+          :title="post.title"
+          :body="post.body"
           articleType="Portrait" />
-    <Item :imageName="secondImage"
-          title="Manger des pierres aide à la digestion !"
-          articleType="Article" />
     <!-- Do a for loop to go through all articles that we fetch -->
   </div>
 </template>
@@ -30,7 +30,15 @@ export default {
     return {
       firstImage,
       secondImage,
+      posts: null,
     };
+  },
+  created() {
+    fetch('https://jsonplaceholder.typicode.com/posts/').then((response) => {
+      response.json().then((data) => {
+        this.posts = data;
+      });
+    });
   },
 };
 </script>

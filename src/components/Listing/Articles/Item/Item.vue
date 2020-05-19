@@ -6,10 +6,7 @@
     <div class="item__details">
       <h3 class="item__type">{{ articleType }}</h3>
       <h2 class="item__title">{{ title }}</h2>
-      <p class="item__text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis
-        cursus lectus sed ultrices est consectetur adipiscing elit. Venenatis cursus lectus sed
-        ultrices est...
-      </p>
+      <p class="item__text">{{ body }}</p>
       <div class="item__link">
         <span class="item__button">Lire l'article</span>
       </div>
@@ -88,6 +85,14 @@
         }
       }
     }
+
+    h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
   }
 </style>
 
@@ -97,6 +102,7 @@ export default {
     imageName: String,
     title: String,
     articleType: String,
+    body: String,
   },
 };
 </script>
