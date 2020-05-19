@@ -1,12 +1,13 @@
 <template>
   <div class="articles">
-    <Item v-for="post in posts"
-          :key="post.id"
-          :id="post.id"
-          :imageName="secondImage"
-          :title="post.title"
-          :body="post.body"
-          articleType="Portrait" />
+    <div v-for="post in posts" :key="post.id">
+      <Item v-if="post.id < 30"
+            :id="post.id"
+            :imageName="secondImage"
+            :title="post.title"
+            :body="post.body"
+            articleType="Portrait" />
+    </div>
   </div>
 </template>
 
