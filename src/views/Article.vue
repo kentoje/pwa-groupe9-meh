@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="post">
     <h1>Article</h1>
     {{ $route.params.slug }}
     {{ post }}

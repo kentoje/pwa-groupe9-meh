@@ -63,9 +63,14 @@
       }
 
       #{$root}__title {
+        display: -webkit-box;
         margin-top: 24px;
         font-size: 36px;
         text-transform: uppercase;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
       #{$root}__text {
@@ -86,14 +91,6 @@
         }
       }
     }
-
-    h2 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2; /* number of lines to show */
-      -webkit-box-orient: vertical;
-    }
   }
 </style>
 
@@ -104,7 +101,7 @@ export default {
     title: String,
     articleType: String,
     body: String,
-    id: String,
+    id: Number,
   },
 };
 </script>
