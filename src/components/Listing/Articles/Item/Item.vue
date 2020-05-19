@@ -1,5 +1,5 @@
 <template>
-  <a href="#" class="item">
+  <router-link :to="`/article/${id}`" class="item">
     <div class="item__media">
       <img class="item__image" :src="imageName" alt="Image">
     </div>
@@ -11,7 +11,7 @@
         <span class="item__button">Lire l'article</span>
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <style lang="scss">
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     max-height: 296px;
-    margin-top: 136px;
+    margin-top: 340px;
     text-decoration: none;
 
     &:first-child {
@@ -34,7 +34,7 @@
 
     &__media {
       position: relative;
-      width: 100%;
+      width: 50%;
       padding-top: 34%;
       overflow: hidden;
 
@@ -52,6 +52,7 @@
     &__details {
       display: flex;
       flex-direction: column;
+      width: 50%;
       height: 85%;
       margin-left: 64px;
       color: #444952;
@@ -103,6 +104,7 @@ export default {
     title: String,
     articleType: String,
     body: String,
+    id: String,
   },
 };
 </script>

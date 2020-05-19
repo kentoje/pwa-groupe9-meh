@@ -1,19 +1,18 @@
 <template>
   <div class="articles">
-    <!-- Do a for loop to go through all articles that we fetch -->
     <Item v-for="post in posts"
           :key="post.id"
-          :imageName="firstImage"
+          :id="post.id"
+          :imageName="secondImage"
           :title="post.title"
           :body="post.body"
           articleType="Portrait" />
-    <!-- Do a for loop to go through all articles that we fetch -->
   </div>
 </template>
 
 <style lang="scss">
   .articles {
-    margin-top: 128px;
+    margin: 128px 180px 0 180px;
   }
 </style>
 
@@ -35,9 +34,10 @@ export default {
   },
   created() {
     fetch('https://jsonplaceholder.typicode.com/posts/').then((response) => {
-      response.json().then((data) => {
-        this.posts = data;
-      });
+      response.json()
+        .then((data) => {
+          this.posts = data;
+        });
     });
   },
 };
