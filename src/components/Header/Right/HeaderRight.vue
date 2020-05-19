@@ -224,6 +224,10 @@
       }
     }
 
+    .burger {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       li {
         display: none;
