@@ -1,8 +1,7 @@
 <template>
   <div class="article" v-if="dataFetched">
-    <h1 class="article__type">Article</h1>
-    <!-- {{ $route.params.slug }} -->
-    <h2 class="article__title">{{ dataFetched.title }}</h2>
+    <h2 class="article__type">{{ type }}</h2>
+    <h1 class="article__title">{{ dataFetched.title }}</h1>
     <div class="article__author">
       <img class="article__author--icon" :src="firstImage" alt="Image" />
       <div>
@@ -10,8 +9,8 @@
         <p class="article__author--date">10 mai 2020 . 10 min de lecture</p>
       </div>
     </div>
-    <img class="article__image" :src="secondImage" alt="Image" />
-    <p class="article__text">{{dataFetched.body}}</p>
+    <img class="article__image" :src="image" alt="Image" />
+    <p class="article__text">{{ dataFetched.body }}</p>
   </div>
 </template>
 
@@ -32,6 +31,7 @@
     font-size: 40px;
     margin-bottom: 30px;
     color: #444952;
+    text-transform: capitalize;
   }
 
   &__author {
@@ -71,6 +71,8 @@
   &__text {
     font-size: 16px;
     color: #444952;
+    line-height: 1.65;
+    text-transform: capitalize;
   }
 
   @media (max-width: 768px) {
@@ -103,16 +105,15 @@
 
 <script>
 import firstImage from '@/assets/images/image1.jpg';
-import secondImage from '@/assets/images/image2.jpg';
 import fetchUser from '@/library/methods/fetchUser';
 
 export default {
   data() {
     return {
       firstImage,
-      secondImage,
       dataFetched: null,
-      slug: null,
+      type: this.$route.query.type,
+      image: this.$route.query.image,
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -121,11 +122,10 @@ export default {
     }, to.params.slug);
   },
   beforeRouteUpdate(to, from, next) {
-    this.slug = to.params.slug;
     fetchUser((err, name) => {
       this.setData(err, name);
       next();
-    }, this.slug);
+    }, to.params.slug);
   },
   methods: {
     setData(err, data) {

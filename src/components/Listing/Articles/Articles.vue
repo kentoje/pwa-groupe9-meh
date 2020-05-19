@@ -2,10 +2,10 @@
   <div class="articles">
     <div v-for="post in posts" :key="post.id">
       <Item :id="post.id"
-            :imageName="secondImage"
             :title="post.title"
             :body="post.body"
-            articleType="Portrait" />
+            :imageName="getRandomImage()"
+            :articleType="getRandomType()" />
     </div>
   </div>
 </template>
@@ -26,8 +26,20 @@
 
 <script>
 import Item from '@/components/Listing/Articles/Item/Item.vue';
-import firstImage from '@/assets/images/image1.jpg';
-import secondImage from '@/assets/images/image2.jpg';
+import getRandomContent from '@/library/methods/randomContent';
+import allImages from '@/library/methods/importAllImages';
+
+const ARTICLE_TYPES = [
+  'Portrait',
+  'Article',
+  'Culture',
+  'Voyage',
+  'Sport',
+  'Zen',
+];
+
+const ARTICLE_IMAGES = allImages();
+const [firstImage, secondImage] = ARTICLE_IMAGES;
 
 const limit = {
   start: 0,
@@ -54,6 +66,15 @@ export default {
           this.posts = data.slice(start, end);
         });
     });
+  },
+  methods: {
+    getRandomType() {
+      return getRandomContent(ARTICLE_TYPES);
+    },
+
+    getRandomImage() {
+      return getRandomContent(ARTICLE_IMAGES);
+    },
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
-  <router-link :to="`/article/${id}`" class="item">
+  <router-link :to="{ path: `/article/${id}`, query: { type: articleType, image: imageName } }"
+               class="item">
     <div class="item__media">
       <img class="item__image" :src="imageName" alt="Image">
     </div>
@@ -79,6 +80,7 @@
         font-size: 14px;
         line-height: 1.65;
         overflow: hidden;
+        text-transform: capitalize;
         text-overflow: ellipsis;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;

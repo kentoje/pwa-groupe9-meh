@@ -21,6 +21,7 @@ const routes = [
     path: '/article/:slug',
     name: 'Article',
     component: Article,
+    props: { default: true, sidebar: false },
   },
 ];
 
