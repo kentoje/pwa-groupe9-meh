@@ -26,13 +26,13 @@
         <p>NOUS CONTACTER</p>
       </div>
     </div>
-    <p></p>
+    <p class="author">Mounir LOUERAD | Kento MONTHUBERT | Virgil LIMONGI</p>
   </footer>
 </template>
 
 <style scoped lang="scss">
 footer {
-  margin: 0px 187px 0px 187px;
+  margin: 150px 187px 0px 187px;
 
   hr {
     border: 1px solid #E0E0E0;
@@ -44,6 +44,7 @@ footer {
     font-size: 12px;
     width: 90%;
     margin-top: 70px;
+    margin-bottom: 70px;
 
     img {
       vertical-align: middle;
@@ -71,11 +72,46 @@ footer {
       font-weight: bold;
       font-size: 12px;
       color: black;
+      margin-bottom: 50px;
     }
 
     p {
       font-size: 12px;
       color: #353535;
+      margin-bottom: 25px;
+    }
+  }
+
+  .author {
+    font-size: 12px;
+    color: #8D8D8D;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 150px 10% 0px 10%;
+  }
+
+  @media (max-width: 768px) {
+    .top {
+      width: 100%;
+    }
+
+    .content {
+      display: inherit;
+      width: 100%;
+
+      p {
+        font-size: 10px;
+      }
+
+      .title {
+        margin-bottom: 30px;
+        font-size: 10px;
+      }
+
+      div {
+        margin-bottom: 50px;
+      }
     }
   }
 }
