@@ -45,3 +45,54 @@ table {
 body {
   font-family: 'Avenir', sans-serif;
 }
+
+/* font-face*/
+
+/* Montserrat */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat-v12-latin-regular.woff2') format('woff2');
+  src: url('../fonts/montserrat-v12-latin-regular.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CharterITC */
+
+@font-face {
+  font-family: 'Charter';
+  src: url('../fonts/CharterITC-Regu.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Charter';
+  src: url('../fonts/charter-itc-bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Charter';
+  src: url('../fonts/charteritcstd-italic.otf') format('otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Freight */
+
+@font-face {
+  font-family: 'Freight';
+  src: url('../fonts/Freight Big Medium SC.otf') format('otf');
+  font-weight: 500;
+  font-style: normal;
+}
