@@ -101,8 +101,12 @@
         </svg>
       </div>
       <div class="content">
-        <router-link class="router__links" to="/"><p>Home</p></router-link>
-        <router-link class="router__links" to="/listing"><p>Listing</p></router-link>
+        <router-link class="router__links" to="/">
+          <p @click="toogleShow()">Home</p>
+        </router-link>
+        <router-link class="router__links" to="/listing">
+          <p @click="toogleShow()">Listing</p>
+        </router-link>
         <p>Accéssoires</p>
         <p>Articles</p>
         <p>Life style</p>
