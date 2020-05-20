@@ -2,7 +2,8 @@
   <nav class="nav">
     <HeaderLeft class="nav__parts nav__parts--left" />
     <div class="logo">
-      <img :src="Logo" alt="logo"/>
+      <img class="mobile" :src="Logo" alt="logo"/>
+      <img class="desktop" :src="LogoDesktop" alt="logo"/>
     </div>
     <HeaderRight class="nav__parts nav__parts--right" />
   </nav>
@@ -35,6 +36,10 @@
       width: calc(100% / 3);
       font-size: 14px;
 
+      .mobile {
+        display: none;
+      }
+
       img {
         height: 50px;
       }
@@ -51,8 +56,16 @@
     }
 
     @media (max-width: 768px) {
-      .logo img{
-        height: 40px;
+      .logo {
+        .mobile {
+          display: block;
+        }
+        .desktop {
+          display: none;
+        }
+        img{
+          height: 40px;
+        }
       }
     }
   }
@@ -62,6 +75,7 @@
 import HeaderLeft from '@/components/Header/Left/HeaderLeft.vue';
 import HeaderRight from '@/components/Header/Right/HeaderRight.vue';
 import Logo from '@/assets/images/Logo.png';
+import LogoDesktop from '@/assets/images/LogoDesktop.png';
 
 export default {
   name: 'Header',
@@ -72,6 +86,7 @@ export default {
   data() {
     return {
       Logo,
+      LogoDesktop,
     };
   },
 };
