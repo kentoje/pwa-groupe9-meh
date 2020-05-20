@@ -50,6 +50,10 @@ footer {
       vertical-align: middle;
     }
 
+    span {
+      cursor: pointer;
+    }
+
     .arrow {
       margin-left: 10px;
     }
@@ -79,6 +83,7 @@ footer {
       font-size: 12px;
       color: #353535;
       margin-bottom: 25px;
+      cursor: pointer;
     }
   }
 

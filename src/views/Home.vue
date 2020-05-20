@@ -65,6 +65,7 @@
     margin-bottom: 65px;
     width: 100%;
     position: relative;
+    cursor: pointer;
   }
 
   .content {
@@ -141,6 +142,7 @@
     .secondView, .thirdView {
       width: 45%;
       position: relative;
+      cursor: pointer;
     }
   }
 

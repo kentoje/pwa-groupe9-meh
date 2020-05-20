@@ -197,6 +197,7 @@
 
         svg:first-child {
           filter: brightness(10.5);
+          cursor: pointer;
         }
 
         svg:last-child {
@@ -213,6 +214,7 @@
         p {
           margin-bottom: 35px;
           text-transform: uppercase;
+          cursor: pointer;
         }
       }
 
@@ -224,6 +226,7 @@
 
         svg {
           filter: brightness(10.5);
+          cursor: pointer;
         }
       }
     }
