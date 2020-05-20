@@ -34,6 +34,10 @@
       justify-content: center;
       width: calc(100% / 3);
       font-size: 14px;
+
+      img {
+        height: 50px;
+      }
     }
 
     @media (max-width: 1024px) {
@@ -43,6 +47,12 @@
 
       &__parts--right {
         margin-right: 10%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo img{
+        height: 40px;
       }
     }
   }
