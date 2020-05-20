@@ -98,7 +98,8 @@
   .text {
     color: #444952;
     font-size: 16px;
-    margin: 20px 0px;
+    margin: 20px 0;
+    line-height: 1.65;
   }
 
   .more {
@@ -108,7 +109,7 @@
   }
 
   svg {
-    margin: 10px 0px;
+    margin: 10px 0;
   }
 
   .famous {

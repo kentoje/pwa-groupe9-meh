@@ -32,6 +32,7 @@
     margin-bottom: 30px;
     color: #444952;
     text-transform: capitalize;
+    font-family: 'Charter', serif;
   }
 
   &__author {
@@ -74,6 +75,7 @@
     color: #444952;
     line-height: 1.65;
     text-transform: capitalize;
+    font-family: 'Charter', serif;
   }
 
   @media (max-width: 768px) {

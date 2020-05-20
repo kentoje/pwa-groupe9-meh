@@ -28,7 +28,7 @@
         <p>NOUS CONTACTER</p>
       </div>
     </div>
-    <p class="author">Mounir LOUERAD | Kento MONTHUBERT | Virgil LIMONGI</p>
+    <p class="author">Mounir LOUERAD 🧑‍🎨 | Kento MONTHUBERT 👨‍💻 | Virgil LIMONGI 🧑‍💻</p>
   </footer>
 </template>
 

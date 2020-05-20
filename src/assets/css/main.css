@@ -42,10 +42,6 @@ table {
   border-spacing: 0;
 }
 
-body {
-  font-family: 'Avenir', sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -73,7 +69,8 @@ html {
 
 @font-face {
   font-family: 'Charter';
-  src: url('../fonts/CharterITC-Regu.otf') format('otf');
+  src: url('../fonts/CharterITC-Regu.woff2') format('woff2');
+  src: url('../fonts/CharterITC-Regu.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -99,6 +96,11 @@ html {
   src: url('../fonts/Freight Big Medium SC.otf') format('otf');
   font-weight: 500;
   font-style: normal;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Transition */

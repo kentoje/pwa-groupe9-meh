@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <Header />
+    <Header class="header" />
     <transition name="fade" mode="out-in">
       <router-view v-if="show" class="view" />
     </transition>
-    <Footer />
+    <Footer class="footer" />
   </div>
 </template>
 
 <style lang="scss">
+  .header {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .footer {
+    font-family: 'Freight', sans-serif;
+  }
+
   .view {
     margin-top: 164px;
   }

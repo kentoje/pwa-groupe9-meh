@@ -71,6 +71,7 @@
         display: -webkit-box;
         margin-top: 24px;
         font-size: 36px;
+        font-family: 'Charter', serif;
         text-transform: uppercase;
         overflow: hidden;
         text-overflow: ellipsis;
