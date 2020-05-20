@@ -3,7 +3,9 @@
     <hr>
     <div class="top">
       <span><img class="flag" v-lazy="flag" alt="drapeau Français"/>France</span>
-      <span>Retour en haut<img class="arrow" v-lazy="arrow" alt="flèche haut"/></span>
+      <span @click="scrollToTop()">Retour en haut
+        <img class="arrow" v-lazy="arrow" alt="flèche haut"/>
+      </span>
     </div>
     <div class="content">
       <div>
@@ -136,6 +138,11 @@ export default {
       flag,
       arrow,
     };
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
 };
 </script>
