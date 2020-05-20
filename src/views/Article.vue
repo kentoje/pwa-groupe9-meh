@@ -106,7 +106,7 @@
 
 <script>
 import firstImage from '@/assets/images/image1.jpg';
-import fetchUser from '@/library/methods/fetchUser';
+import fetchData from '@/library/methods/fetchData';
 
 export default {
   data() {
@@ -118,15 +118,15 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    fetchUser((err, name) => {
-      next((vm) => vm.setData(err, name));
-    }, to.params.slug);
+    fetchData((err, data) => {
+      next((vm) => vm.setData(err, data));
+    }, to.params.id);
   },
   beforeRouteUpdate(to, from, next) {
-    fetchUser((err, name) => {
-      this.setData(err, name);
+    fetchData((err, data) => {
+      this.setData(err, data);
       next();
-    }, to.params.slug);
+    }, to.params.id);
   },
   methods: {
     setData(err, data) {

@@ -23,8 +23,8 @@ self.addEventListener('push', (event) => {
   let pushMessage = event.data.text();
   const options = {
     body: pushMessage,
-    icon: './img/icons/apple-touch-icon-60x60.png',
-    image: './img/icons/apple-touch-icon-60x60.png',
+    icon: './img/icons/icon-72x72.png',
+    image: './img/icons/icon-72x72.png',
     vibrate: [200, 100, 200, 100],
     tag: 'vibration-sample',
   };

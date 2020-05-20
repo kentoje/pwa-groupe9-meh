@@ -18,10 +18,10 @@ const routes = [
     component: Listing,
   },
   {
-    path: '/article/:slug',
+    path: '/article/:id',
     name: 'Article',
     component: Article,
-    props: { default: true, sidebar: false },
+    props: { default: true },
   },
 ];
 
